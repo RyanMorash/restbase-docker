@@ -6,6 +6,8 @@ PARSOID_URL="${PARSOID_URL:-http://localhost:8000}"
 PARSOID_DOMAIN="${PARSOID_DOMAIN:-localhost}"
 NUM_WORKERS="${NUM_WORKERS:-4}"
 
+service ssh start
+
 cat /usr/local/lib/node_modules/restbase/config.example.yaml \
     | sed -e "s@http://localhost/w/api.php@${MEDIAWIKI_API_URL}@" \
     | sed -e "s@http://localhost:8142@${PARSOID_URL}@" \
